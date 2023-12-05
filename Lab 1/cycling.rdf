@@ -13,6 +13,64 @@
     <!-- 
     ///////////////////////////////////////////////////////////////////////////////////////
     //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/frenchie/ontologies/cycling#composedOf -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/frenchie/ontologies/cycling#composedOf">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#TransitiveProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/frenchie/ontologies/cycling#SeveralStagesRace"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/frenchie/ontologies/cycling#Stages"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/frenchie/ontologies/cycling#composedOfPrologue -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/frenchie/ontologies/cycling#composedOfPrologue">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/frenchie/ontologies/cycling#composedOf"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/frenchie/ontologies/cycling#SeveralStagesRace"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/frenchie/ontologies/cycling#Prologue"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/frenchie/ontologies/cycling#hasStage -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/frenchie/ontologies/cycling#hasStage"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/frenchie/ontologies/cycling#stageOrder -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/frenchie/ontologies/cycling#stageOrder">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/frenchie/ontologies/cycling#Stages"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
     // Classes
     //
     ///////////////////////////////////////////////////////////////////////////////////////
@@ -27,10 +85,51 @@
     
 
 
+    <!-- http://www.semanticweb.org/frenchie/ontologies/cycling#FlatStage -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/frenchie/ontologies/cycling#FlatStage">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/frenchie/ontologies/cycling#Stages"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/frenchie/ontologies/cycling#MountainStage"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/frenchie/ontologies/cycling#IndividualTimeTrial -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/frenchie/ontologies/cycling#IndividualTimeTrial">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/frenchie/ontologies/cycling#TimeTrial"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/frenchie/ontologies/cycling#TeamTimeTrial"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/frenchie/ontologies/cycling#MountainStage -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/frenchie/ontologies/cycling#MountainStage">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/frenchie/ontologies/cycling#Stages"/>
+    </owl:Class>
+    
+
+
     <!-- http://www.semanticweb.org/frenchie/ontologies/cycling#OneDayRace -->
 
     <owl:Class rdf:about="http://www.semanticweb.org/frenchie/ontologies/cycling#OneDayRace">
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/frenchie/ontologies/cycling#Race"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/frenchie/ontologies/cycling#SeveralStagesRace"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/frenchie/ontologies/cycling#Prologue -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/frenchie/ontologies/cycling#Prologue">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/frenchie/ontologies/cycling#Stages"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/frenchie/ontologies/cycling#stageOrder"/>
+                <owl:hasValue rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</owl:hasValue>
+            </owl:Restriction>
+        </rdfs:subClassOf>
     </owl:Class>
     
 
@@ -39,6 +138,10 @@
 
     <owl:Class rdf:about="http://www.semanticweb.org/frenchie/ontologies/cycling#Race">
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/frenchie/ontologies/cycling#DomainThing"/>
+        <owl:disjointUnionOf rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.semanticweb.org/frenchie/ontologies/cycling#OneDayRace"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/frenchie/ontologies/cycling#SeveralStagesRace"/>
+        </owl:disjointUnionOf>
     </owl:Class>
     
 
@@ -47,6 +150,30 @@
 
     <owl:Class rdf:about="http://www.semanticweb.org/frenchie/ontologies/cycling#SeveralStagesRace">
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/frenchie/ontologies/cycling#Race"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/frenchie/ontologies/cycling#Stages -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/frenchie/ontologies/cycling#Stages">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/frenchie/ontologies/cycling#DomainThing"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/frenchie/ontologies/cycling#TeamTimeTrial -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/frenchie/ontologies/cycling#TeamTimeTrial">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/frenchie/ontologies/cycling#TimeTrial"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/frenchie/ontologies/cycling#TimeTrial -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/frenchie/ontologies/cycling#TimeTrial">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/frenchie/ontologies/cycling#Stages"/>
     </owl:Class>
 </rdf:RDF>
 
