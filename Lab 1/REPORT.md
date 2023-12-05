@@ -9,3 +9,9 @@
 > $SeveralStagesRace \sqsubseteq Race$
 >
 > $Race \equiv OneDayRace \sqcup SeveralStagesRace$
+
+
+#### 5. Define with necessary and sufficient conditions (i.e. strict equality) the Prologue class such as the Prologue is exactly always the first Stage of a SeveralStagesRace. You might have to introduce more properties or use the inverse of an existing property to do this modeling. Write in the report the logical formula equivalent to this definition.
+>
+>
+> $SeveralStagesRace \sqsubseteq \leq1Prologue$ 
