@@ -6,7 +6,7 @@
      xmlns:xml="http://www.w3.org/XML/1998/namespace"
      xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
      xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
-    <owl:Ontology rdf:about="http://www.semanticweb.org/frenchie/ontologies/cycling"/>
+    <owl:Ontology rdf:about="https://raw.githubusercontent.com/efrenbg1/WebSem/main/Lab%201/cycling"/>
     
 
 
@@ -21,30 +21,30 @@
     
 
 
-    <!-- http://www.semanticweb.org/frenchie/ontologies/cycling#composedOf -->
+    <!-- https://raw.githubusercontent.com/efrenbg1/WebSem/main/Lab%201/cycling#composedOf -->
 
-    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/frenchie/ontologies/cycling#composedOf">
+    <owl:ObjectProperty rdf:about="https://raw.githubusercontent.com/efrenbg1/WebSem/main/Lab%201/cycling#composedOf">
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#TransitiveProperty"/>
-        <rdfs:domain rdf:resource="http://www.semanticweb.org/frenchie/ontologies/cycling#SeveralStagesRace"/>
-        <rdfs:range rdf:resource="http://www.semanticweb.org/frenchie/ontologies/cycling#Stages"/>
+        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/efrenbg1/WebSem/main/Lab%201/cycling#SeveralStagesRace"/>
+        <rdfs:range rdf:resource="https://raw.githubusercontent.com/efrenbg1/WebSem/main/Lab%201/cycling#Stages"/>
     </owl:ObjectProperty>
     
 
 
-    <!-- http://www.semanticweb.org/frenchie/ontologies/cycling#composedOfPrologue -->
+    <!-- https://raw.githubusercontent.com/efrenbg1/WebSem/main/Lab%201/cycling#composedOfPrologue -->
 
-    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/frenchie/ontologies/cycling#composedOfPrologue">
-        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/frenchie/ontologies/cycling#composedOf"/>
+    <owl:ObjectProperty rdf:about="https://raw.githubusercontent.com/efrenbg1/WebSem/main/Lab%201/cycling#composedOfPrologue">
+        <rdfs:subPropertyOf rdf:resource="https://raw.githubusercontent.com/efrenbg1/WebSem/main/Lab%201/cycling#composedOf"/>
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
-        <rdfs:domain rdf:resource="http://www.semanticweb.org/frenchie/ontologies/cycling#SeveralStagesRace"/>
-        <rdfs:range rdf:resource="http://www.semanticweb.org/frenchie/ontologies/cycling#Prologue"/>
+        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/efrenbg1/WebSem/main/Lab%201/cycling#SeveralStagesRace"/>
+        <rdfs:range rdf:resource="https://raw.githubusercontent.com/efrenbg1/WebSem/main/Lab%201/cycling#Prologue"/>
     </owl:ObjectProperty>
     
 
 
-    <!-- http://www.semanticweb.org/frenchie/ontologies/cycling#hasStage -->
+    <!-- https://raw.githubusercontent.com/efrenbg1/WebSem/main/Lab%201/cycling#hasStage -->
 
-    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/frenchie/ontologies/cycling#hasStage"/>
+    <owl:ObjectProperty rdf:about="https://raw.githubusercontent.com/efrenbg1/WebSem/main/Lab%201/cycling#hasStage"/>
     
 
 
@@ -59,10 +59,10 @@
     
 
 
-    <!-- http://www.semanticweb.org/frenchie/ontologies/cycling#stageOrder -->
+    <!-- https://raw.githubusercontent.com/efrenbg1/WebSem/main/Lab%201/cycling#stageOrder -->
 
-    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/frenchie/ontologies/cycling#stageOrder">
-        <rdfs:domain rdf:resource="http://www.semanticweb.org/frenchie/ontologies/cycling#Stages"/>
+    <owl:DatatypeProperty rdf:about="https://raw.githubusercontent.com/efrenbg1/WebSem/main/Lab%201/cycling#stageOrder">
+        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/efrenbg1/WebSem/main/Lab%201/cycling#Stages"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"/>
     </owl:DatatypeProperty>
     
@@ -79,54 +79,54 @@
     
 
 
-    <!-- http://www.semanticweb.org/frenchie/ontologies/cycling#DomainThing -->
+    <!-- https://raw.githubusercontent.com/efrenbg1/WebSem/main/Lab%201/cycling#DomainThing -->
 
-    <owl:Class rdf:about="http://www.semanticweb.org/frenchie/ontologies/cycling#DomainThing"/>
+    <owl:Class rdf:about="https://raw.githubusercontent.com/efrenbg1/WebSem/main/Lab%201/cycling#DomainThing"/>
     
 
 
-    <!-- http://www.semanticweb.org/frenchie/ontologies/cycling#FlatStage -->
+    <!-- https://raw.githubusercontent.com/efrenbg1/WebSem/main/Lab%201/cycling#FlatStage -->
 
-    <owl:Class rdf:about="http://www.semanticweb.org/frenchie/ontologies/cycling#FlatStage">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/frenchie/ontologies/cycling#Stages"/>
-        <owl:disjointWith rdf:resource="http://www.semanticweb.org/frenchie/ontologies/cycling#MountainStage"/>
+    <owl:Class rdf:about="https://raw.githubusercontent.com/efrenbg1/WebSem/main/Lab%201/cycling#FlatStage">
+        <rdfs:subClassOf rdf:resource="https://raw.githubusercontent.com/efrenbg1/WebSem/main/Lab%201/cycling#Stages"/>
+        <owl:disjointWith rdf:resource="https://raw.githubusercontent.com/efrenbg1/WebSem/main/Lab%201/cycling#MountainStage"/>
     </owl:Class>
     
 
 
-    <!-- http://www.semanticweb.org/frenchie/ontologies/cycling#IndividualTimeTrial -->
+    <!-- https://raw.githubusercontent.com/efrenbg1/WebSem/main/Lab%201/cycling#IndividualTimeTrial -->
 
-    <owl:Class rdf:about="http://www.semanticweb.org/frenchie/ontologies/cycling#IndividualTimeTrial">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/frenchie/ontologies/cycling#TimeTrial"/>
-        <owl:disjointWith rdf:resource="http://www.semanticweb.org/frenchie/ontologies/cycling#TeamTimeTrial"/>
+    <owl:Class rdf:about="https://raw.githubusercontent.com/efrenbg1/WebSem/main/Lab%201/cycling#IndividualTimeTrial">
+        <rdfs:subClassOf rdf:resource="https://raw.githubusercontent.com/efrenbg1/WebSem/main/Lab%201/cycling#TimeTrial"/>
+        <owl:disjointWith rdf:resource="https://raw.githubusercontent.com/efrenbg1/WebSem/main/Lab%201/cycling#TeamTimeTrial"/>
     </owl:Class>
     
 
 
-    <!-- http://www.semanticweb.org/frenchie/ontologies/cycling#MountainStage -->
+    <!-- https://raw.githubusercontent.com/efrenbg1/WebSem/main/Lab%201/cycling#MountainStage -->
 
-    <owl:Class rdf:about="http://www.semanticweb.org/frenchie/ontologies/cycling#MountainStage">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/frenchie/ontologies/cycling#Stages"/>
+    <owl:Class rdf:about="https://raw.githubusercontent.com/efrenbg1/WebSem/main/Lab%201/cycling#MountainStage">
+        <rdfs:subClassOf rdf:resource="https://raw.githubusercontent.com/efrenbg1/WebSem/main/Lab%201/cycling#Stages"/>
     </owl:Class>
     
 
 
-    <!-- http://www.semanticweb.org/frenchie/ontologies/cycling#OneDayRace -->
+    <!-- https://raw.githubusercontent.com/efrenbg1/WebSem/main/Lab%201/cycling#OneDayRace -->
 
-    <owl:Class rdf:about="http://www.semanticweb.org/frenchie/ontologies/cycling#OneDayRace">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/frenchie/ontologies/cycling#Race"/>
-        <owl:disjointWith rdf:resource="http://www.semanticweb.org/frenchie/ontologies/cycling#SeveralStagesRace"/>
+    <owl:Class rdf:about="https://raw.githubusercontent.com/efrenbg1/WebSem/main/Lab%201/cycling#OneDayRace">
+        <rdfs:subClassOf rdf:resource="https://raw.githubusercontent.com/efrenbg1/WebSem/main/Lab%201/cycling#Race"/>
+        <owl:disjointWith rdf:resource="https://raw.githubusercontent.com/efrenbg1/WebSem/main/Lab%201/cycling#SeveralStagesRace"/>
     </owl:Class>
     
 
 
-    <!-- http://www.semanticweb.org/frenchie/ontologies/cycling#Prologue -->
+    <!-- https://raw.githubusercontent.com/efrenbg1/WebSem/main/Lab%201/cycling#Prologue -->
 
-    <owl:Class rdf:about="http://www.semanticweb.org/frenchie/ontologies/cycling#Prologue">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/frenchie/ontologies/cycling#Stages"/>
+    <owl:Class rdf:about="https://raw.githubusercontent.com/efrenbg1/WebSem/main/Lab%201/cycling#Prologue">
+        <rdfs:subClassOf rdf:resource="https://raw.githubusercontent.com/efrenbg1/WebSem/main/Lab%201/cycling#Stages"/>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="http://www.semanticweb.org/frenchie/ontologies/cycling#stageOrder"/>
+                <owl:onProperty rdf:resource="https://raw.githubusercontent.com/efrenbg1/WebSem/main/Lab%201/cycling#stageOrder"/>
                 <owl:hasValue rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</owl:hasValue>
             </owl:Restriction>
         </rdfs:subClassOf>
@@ -134,46 +134,46 @@
     
 
 
-    <!-- http://www.semanticweb.org/frenchie/ontologies/cycling#Race -->
+    <!-- https://raw.githubusercontent.com/efrenbg1/WebSem/main/Lab%201/cycling#Race -->
 
-    <owl:Class rdf:about="http://www.semanticweb.org/frenchie/ontologies/cycling#Race">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/frenchie/ontologies/cycling#DomainThing"/>
+    <owl:Class rdf:about="https://raw.githubusercontent.com/efrenbg1/WebSem/main/Lab%201/cycling#Race">
+        <rdfs:subClassOf rdf:resource="https://raw.githubusercontent.com/efrenbg1/WebSem/main/Lab%201/cycling#DomainThing"/>
         <owl:disjointUnionOf rdf:parseType="Collection">
-            <rdf:Description rdf:about="http://www.semanticweb.org/frenchie/ontologies/cycling#OneDayRace"/>
-            <rdf:Description rdf:about="http://www.semanticweb.org/frenchie/ontologies/cycling#SeveralStagesRace"/>
+            <rdf:Description rdf:about="https://raw.githubusercontent.com/efrenbg1/WebSem/main/Lab%201/cycling#OneDayRace"/>
+            <rdf:Description rdf:about="https://raw.githubusercontent.com/efrenbg1/WebSem/main/Lab%201/cycling#SeveralStagesRace"/>
         </owl:disjointUnionOf>
     </owl:Class>
     
 
 
-    <!-- http://www.semanticweb.org/frenchie/ontologies/cycling#SeveralStagesRace -->
+    <!-- https://raw.githubusercontent.com/efrenbg1/WebSem/main/Lab%201/cycling#SeveralStagesRace -->
 
-    <owl:Class rdf:about="http://www.semanticweb.org/frenchie/ontologies/cycling#SeveralStagesRace">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/frenchie/ontologies/cycling#Race"/>
+    <owl:Class rdf:about="https://raw.githubusercontent.com/efrenbg1/WebSem/main/Lab%201/cycling#SeveralStagesRace">
+        <rdfs:subClassOf rdf:resource="https://raw.githubusercontent.com/efrenbg1/WebSem/main/Lab%201/cycling#Race"/>
     </owl:Class>
     
 
 
-    <!-- http://www.semanticweb.org/frenchie/ontologies/cycling#Stages -->
+    <!-- https://raw.githubusercontent.com/efrenbg1/WebSem/main/Lab%201/cycling#Stages -->
 
-    <owl:Class rdf:about="http://www.semanticweb.org/frenchie/ontologies/cycling#Stages">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/frenchie/ontologies/cycling#DomainThing"/>
+    <owl:Class rdf:about="https://raw.githubusercontent.com/efrenbg1/WebSem/main/Lab%201/cycling#Stages">
+        <rdfs:subClassOf rdf:resource="https://raw.githubusercontent.com/efrenbg1/WebSem/main/Lab%201/cycling#DomainThing"/>
     </owl:Class>
     
 
 
-    <!-- http://www.semanticweb.org/frenchie/ontologies/cycling#TeamTimeTrial -->
+    <!-- https://raw.githubusercontent.com/efrenbg1/WebSem/main/Lab%201/cycling#TeamTimeTrial -->
 
-    <owl:Class rdf:about="http://www.semanticweb.org/frenchie/ontologies/cycling#TeamTimeTrial">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/frenchie/ontologies/cycling#TimeTrial"/>
+    <owl:Class rdf:about="https://raw.githubusercontent.com/efrenbg1/WebSem/main/Lab%201/cycling#TeamTimeTrial">
+        <rdfs:subClassOf rdf:resource="https://raw.githubusercontent.com/efrenbg1/WebSem/main/Lab%201/cycling#TimeTrial"/>
     </owl:Class>
     
 
 
-    <!-- http://www.semanticweb.org/frenchie/ontologies/cycling#TimeTrial -->
+    <!-- https://raw.githubusercontent.com/efrenbg1/WebSem/main/Lab%201/cycling#TimeTrial -->
 
-    <owl:Class rdf:about="http://www.semanticweb.org/frenchie/ontologies/cycling#TimeTrial">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/frenchie/ontologies/cycling#Stages"/>
+    <owl:Class rdf:about="https://raw.githubusercontent.com/efrenbg1/WebSem/main/Lab%201/cycling#TimeTrial">
+        <rdfs:subClassOf rdf:resource="https://raw.githubusercontent.com/efrenbg1/WebSem/main/Lab%201/cycling#Stages"/>
     </owl:Class>
 </rdf:RDF>
 
