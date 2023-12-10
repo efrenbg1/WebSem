@@ -341,11 +341,6 @@
 
     <owl:Class rdf:about="https://raw.githubusercontent.com/efrenbg1/WebSem/main/Lab%201/cycling.rdf#Rider">
         <rdfs:subClassOf rdf:resource="https://raw.githubusercontent.com/efrenbg1/WebSem/main/Lab%201/cycling.rdf#RaceCyclist"/>
-        <owl:disjointUnionOf rdf:parseType="Collection">
-            <rdf:Description rdf:about="https://raw.githubusercontent.com/efrenbg1/WebSem/main/Lab%201/cycling.rdf#Director"/>
-            <rdf:Description rdf:about="https://raw.githubusercontent.com/efrenbg1/WebSem/main/Lab%201/cycling.rdf#Doctor"/>
-            <rdf:Description rdf:about="https://raw.githubusercontent.com/efrenbg1/WebSem/main/Lab%201/cycling.rdf#RaceCyclist"/>
-        </owl:disjointUnionOf>
     </owl:Class>
     
 
@@ -385,6 +380,16 @@
     <!-- https://raw.githubusercontent.com/efrenbg1/WebSem/main/Lab%201/cycling.rdf#Team -->
 
     <owl:Class rdf:about="https://raw.githubusercontent.com/efrenbg1/WebSem/main/Lab%201/cycling.rdf#Team">
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty>
+                    <rdf:Description>
+                        <owl:inverseOf rdf:resource="https://raw.githubusercontent.com/efrenbg1/WebSem/main/Lab%201/cycling.rdf#belongsTo"/>
+                    </rdf:Description>
+                </owl:onProperty>
+                <owl:someValuesFrom rdf:resource="https://raw.githubusercontent.com/efrenbg1/WebSem/main/Lab%201/cycling.rdf#TeamPerson"/>
+            </owl:Restriction>
+        </owl:equivalentClass>
         <rdfs:subClassOf rdf:resource="https://raw.githubusercontent.com/efrenbg1/WebSem/main/Lab%201/cycling.rdf#DomainThing"/>
         <rdfs:subClassOf>
             <owl:Restriction>
@@ -413,6 +418,11 @@
 
     <owl:Class rdf:about="https://raw.githubusercontent.com/efrenbg1/WebSem/main/Lab%201/cycling.rdf#TeamPerson">
         <rdfs:subClassOf rdf:resource="https://raw.githubusercontent.com/efrenbg1/WebSem/main/Lab%201/cycling.rdf#Person"/>
+        <owl:disjointUnionOf rdf:parseType="Collection">
+            <rdf:Description rdf:about="https://raw.githubusercontent.com/efrenbg1/WebSem/main/Lab%201/cycling.rdf#Director"/>
+            <rdf:Description rdf:about="https://raw.githubusercontent.com/efrenbg1/WebSem/main/Lab%201/cycling.rdf#Doctor"/>
+            <rdf:Description rdf:about="https://raw.githubusercontent.com/efrenbg1/WebSem/main/Lab%201/cycling.rdf#RaceCyclist"/>
+        </owl:disjointUnionOf>
     </owl:Class>
     
 
