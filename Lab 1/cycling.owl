@@ -1,0 +1,540 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="https://raw.githubusercontent.com/efrenbg1/WebSem/main/Lab%201/cycling.owl"
+     xml:base="https://raw.githubusercontent.com/efrenbg1/WebSem/main/Lab%201/cycling.owl"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
+    <owl:Ontology rdf:about="https://raw.githubusercontent.com/efrenbg1/WebSem/main/Lab%201/cycling.owl"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- https://raw.githubusercontent.com/efrenbg1/WebSem/main/Lab%201/cycling.owl#belongsTo -->
+
+    <owl:ObjectProperty rdf:about="https://raw.githubusercontent.com/efrenbg1/WebSem/main/Lab%201/cycling.owl#belongsTo">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#TransitiveProperty"/>
+        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/efrenbg1/WebSem/main/Lab%201/cycling.owl#TeamPerson"/>
+        <rdfs:range rdf:resource="https://raw.githubusercontent.com/efrenbg1/WebSem/main/Lab%201/cycling.owl#Team"/>
+        <rdfs:comment>http://xmlns.com/foaf/0.1/member</rdfs:comment>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://raw.githubusercontent.com/efrenbg1/WebSem/main/Lab%201/cycling.owl#composedOf -->
+
+    <owl:ObjectProperty rdf:about="https://raw.githubusercontent.com/efrenbg1/WebSem/main/Lab%201/cycling.owl#composedOf">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#TransitiveProperty"/>
+        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/efrenbg1/WebSem/main/Lab%201/cycling.owl#SeveralStagesRace"/>
+        <rdfs:range rdf:resource="https://raw.githubusercontent.com/efrenbg1/WebSem/main/Lab%201/cycling.owl#Stages"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://raw.githubusercontent.com/efrenbg1/WebSem/main/Lab%201/cycling.owl#composedOfPrologue -->
+
+    <owl:ObjectProperty rdf:about="https://raw.githubusercontent.com/efrenbg1/WebSem/main/Lab%201/cycling.owl#composedOfPrologue">
+        <rdfs:subPropertyOf rdf:resource="https://raw.githubusercontent.com/efrenbg1/WebSem/main/Lab%201/cycling.owl#composedOf"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/efrenbg1/WebSem/main/Lab%201/cycling.owl#SeveralStagesRace"/>
+        <rdfs:range rdf:resource="https://raw.githubusercontent.com/efrenbg1/WebSem/main/Lab%201/cycling.owl#Prologue"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://raw.githubusercontent.com/efrenbg1/WebSem/main/Lab%201/cycling.owl#cyclistBelongsTo -->
+
+    <owl:ObjectProperty rdf:about="https://raw.githubusercontent.com/efrenbg1/WebSem/main/Lab%201/cycling.owl#cyclistBelongsTo">
+        <rdfs:subPropertyOf rdf:resource="https://raw.githubusercontent.com/efrenbg1/WebSem/main/Lab%201/cycling.owl#belongsTo"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#InverseFunctionalProperty"/>
+        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/efrenbg1/WebSem/main/Lab%201/cycling.owl#RaceCyclist"/>
+        <rdfs:range rdf:resource="https://raw.githubusercontent.com/efrenbg1/WebSem/main/Lab%201/cycling.owl#Team"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://raw.githubusercontent.com/efrenbg1/WebSem/main/Lab%201/cycling.owl#directorBelongsTo -->
+
+    <owl:ObjectProperty rdf:about="https://raw.githubusercontent.com/efrenbg1/WebSem/main/Lab%201/cycling.owl#directorBelongsTo">
+        <rdfs:subPropertyOf rdf:resource="https://raw.githubusercontent.com/efrenbg1/WebSem/main/Lab%201/cycling.owl#belongsTo"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/efrenbg1/WebSem/main/Lab%201/cycling.owl#Director"/>
+        <rdfs:range rdf:resource="https://raw.githubusercontent.com/efrenbg1/WebSem/main/Lab%201/cycling.owl#Team"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://raw.githubusercontent.com/efrenbg1/WebSem/main/Lab%201/cycling.owl#doctorBelongsTo -->
+
+    <owl:ObjectProperty rdf:about="https://raw.githubusercontent.com/efrenbg1/WebSem/main/Lab%201/cycling.owl#doctorBelongsTo">
+        <rdfs:subPropertyOf rdf:resource="https://raw.githubusercontent.com/efrenbg1/WebSem/main/Lab%201/cycling.owl#belongsTo"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/efrenbg1/WebSem/main/Lab%201/cycling.owl#Doctor"/>
+        <rdfs:range rdf:resource="https://raw.githubusercontent.com/efrenbg1/WebSem/main/Lab%201/cycling.owl#Team"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://raw.githubusercontent.com/efrenbg1/WebSem/main/Lab%201/cycling.owl#participatesIn -->
+
+    <owl:ObjectProperty rdf:about="https://raw.githubusercontent.com/efrenbg1/WebSem/main/Lab%201/cycling.owl#participatesIn">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#TransitiveProperty"/>
+        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/efrenbg1/WebSem/main/Lab%201/cycling.owl#Person"/>
+        <rdfs:range rdf:resource="https://raw.githubusercontent.com/efrenbg1/WebSem/main/Lab%201/cycling.owl#Race"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- https://raw.githubusercontent.com/efrenbg1/WebSem/main/Lab%201/cycling.owl#age -->
+
+    <owl:DatatypeProperty rdf:about="https://raw.githubusercontent.com/efrenbg1/WebSem/main/Lab%201/cycling.owl#age">
+        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/efrenbg1/WebSem/main/Lab%201/cycling.owl#Person"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"/>
+        <rdfs:comment>http://xmlns.com/foaf/0.1/age</rdfs:comment>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://raw.githubusercontent.com/efrenbg1/WebSem/main/Lab%201/cycling.owl#name -->
+
+    <owl:DatatypeProperty rdf:about="https://raw.githubusercontent.com/efrenbg1/WebSem/main/Lab%201/cycling.owl#name">
+        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/efrenbg1/WebSem/main/Lab%201/cycling.owl#Person"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment>http://xmlns.com/foaf/0.1/firstName</rdfs:comment>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://raw.githubusercontent.com/efrenbg1/WebSem/main/Lab%201/cycling.owl#nationality -->
+
+    <owl:DatatypeProperty rdf:about="https://raw.githubusercontent.com/efrenbg1/WebSem/main/Lab%201/cycling.owl#nationality">
+        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/efrenbg1/WebSem/main/Lab%201/cycling.owl#Person"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://raw.githubusercontent.com/efrenbg1/WebSem/main/Lab%201/cycling.owl#stageOrder -->
+
+    <owl:DatatypeProperty rdf:about="https://raw.githubusercontent.com/efrenbg1/WebSem/main/Lab%201/cycling.owl#stageOrder">
+        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/efrenbg1/WebSem/main/Lab%201/cycling.owl#Stages"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://raw.githubusercontent.com/efrenbg1/WebSem/main/Lab%201/cycling.owl#teamClimbersCount -->
+
+    <owl:DatatypeProperty rdf:about="https://raw.githubusercontent.com/efrenbg1/WebSem/main/Lab%201/cycling.owl#teamClimbersCount">
+        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/efrenbg1/WebSem/main/Lab%201/cycling.owl#Team"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://raw.githubusercontent.com/efrenbg1/WebSem/main/Lab%201/cycling.owl#teamCyclistsCount -->
+
+    <owl:DatatypeProperty rdf:about="https://raw.githubusercontent.com/efrenbg1/WebSem/main/Lab%201/cycling.owl#teamCyclistsCount">
+        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/efrenbg1/WebSem/main/Lab%201/cycling.owl#Team"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://raw.githubusercontent.com/efrenbg1/WebSem/main/Lab%201/cycling.owl#teamDirectorsCount -->
+
+    <owl:DatatypeProperty rdf:about="https://raw.githubusercontent.com/efrenbg1/WebSem/main/Lab%201/cycling.owl#teamDirectorsCount">
+        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/efrenbg1/WebSem/main/Lab%201/cycling.owl#Team"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://raw.githubusercontent.com/efrenbg1/WebSem/main/Lab%201/cycling.owl#teamDoctorsCount -->
+
+    <owl:DatatypeProperty rdf:about="https://raw.githubusercontent.com/efrenbg1/WebSem/main/Lab%201/cycling.owl#teamDoctorsCount">
+        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/efrenbg1/WebSem/main/Lab%201/cycling.owl#Team"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://raw.githubusercontent.com/efrenbg1/WebSem/main/Lab%201/cycling.owl#teamRidersCount -->
+
+    <owl:DatatypeProperty rdf:about="https://raw.githubusercontent.com/efrenbg1/WebSem/main/Lab%201/cycling.owl#teamRidersCount">
+        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/efrenbg1/WebSem/main/Lab%201/cycling.owl#Team"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- https://raw.githubusercontent.com/efrenbg1/WebSem/main/Lab%201/cycling.owl#Climber -->
+
+    <owl:Class rdf:about="https://raw.githubusercontent.com/efrenbg1/WebSem/main/Lab%201/cycling.owl#Climber">
+        <rdfs:subClassOf rdf:resource="https://raw.githubusercontent.com/efrenbg1/WebSem/main/Lab%201/cycling.owl#RaceCyclist"/>
+    </owl:Class>
+    
+
+
+    <!-- https://raw.githubusercontent.com/efrenbg1/WebSem/main/Lab%201/cycling.owl#Director -->
+
+    <owl:Class rdf:about="https://raw.githubusercontent.com/efrenbg1/WebSem/main/Lab%201/cycling.owl#Director">
+        <rdfs:subClassOf rdf:resource="https://raw.githubusercontent.com/efrenbg1/WebSem/main/Lab%201/cycling.owl#TeamPerson"/>
+    </owl:Class>
+    
+
+
+    <!-- https://raw.githubusercontent.com/efrenbg1/WebSem/main/Lab%201/cycling.owl#Doctor -->
+
+    <owl:Class rdf:about="https://raw.githubusercontent.com/efrenbg1/WebSem/main/Lab%201/cycling.owl#Doctor">
+        <rdfs:subClassOf rdf:resource="https://raw.githubusercontent.com/efrenbg1/WebSem/main/Lab%201/cycling.owl#TeamPerson"/>
+    </owl:Class>
+    
+
+
+    <!-- https://raw.githubusercontent.com/efrenbg1/WebSem/main/Lab%201/cycling.owl#DomainThing -->
+
+    <owl:Class rdf:about="https://raw.githubusercontent.com/efrenbg1/WebSem/main/Lab%201/cycling.owl#DomainThing"/>
+    
+
+
+    <!-- https://raw.githubusercontent.com/efrenbg1/WebSem/main/Lab%201/cycling.owl#FlatStage -->
+
+    <owl:Class rdf:about="https://raw.githubusercontent.com/efrenbg1/WebSem/main/Lab%201/cycling.owl#FlatStage">
+        <rdfs:subClassOf rdf:resource="https://raw.githubusercontent.com/efrenbg1/WebSem/main/Lab%201/cycling.owl#Stages"/>
+        <owl:disjointWith rdf:resource="https://raw.githubusercontent.com/efrenbg1/WebSem/main/Lab%201/cycling.owl#MountainStage"/>
+    </owl:Class>
+    
+
+
+    <!-- https://raw.githubusercontent.com/efrenbg1/WebSem/main/Lab%201/cycling.owl#GoodTeam -->
+
+    <owl:Class rdf:about="https://raw.githubusercontent.com/efrenbg1/WebSem/main/Lab%201/cycling.owl#GoodTeam">
+        <rdfs:subClassOf rdf:resource="https://raw.githubusercontent.com/efrenbg1/WebSem/main/Lab%201/cycling.owl#Team"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://raw.githubusercontent.com/efrenbg1/WebSem/main/Lab%201/cycling.owl#teamClimbersCount"/>
+                <owl:hasValue rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">3</owl:hasValue>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://raw.githubusercontent.com/efrenbg1/WebSem/main/Lab%201/cycling.owl#teamRidersCount"/>
+                <owl:hasValue rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</owl:hasValue>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- https://raw.githubusercontent.com/efrenbg1/WebSem/main/Lab%201/cycling.owl#IndividualTimeTrial -->
+
+    <owl:Class rdf:about="https://raw.githubusercontent.com/efrenbg1/WebSem/main/Lab%201/cycling.owl#IndividualTimeTrial">
+        <rdfs:subClassOf rdf:resource="https://raw.githubusercontent.com/efrenbg1/WebSem/main/Lab%201/cycling.owl#TimeTrial"/>
+        <owl:disjointWith rdf:resource="https://raw.githubusercontent.com/efrenbg1/WebSem/main/Lab%201/cycling.owl#TeamTimeTrial"/>
+    </owl:Class>
+    
+
+
+    <!-- https://raw.githubusercontent.com/efrenbg1/WebSem/main/Lab%201/cycling.owl#MountainStage -->
+
+    <owl:Class rdf:about="https://raw.githubusercontent.com/efrenbg1/WebSem/main/Lab%201/cycling.owl#MountainStage">
+        <rdfs:subClassOf rdf:resource="https://raw.githubusercontent.com/efrenbg1/WebSem/main/Lab%201/cycling.owl#Stages"/>
+    </owl:Class>
+    
+
+
+    <!-- https://raw.githubusercontent.com/efrenbg1/WebSem/main/Lab%201/cycling.owl#OneDayRace -->
+
+    <owl:Class rdf:about="https://raw.githubusercontent.com/efrenbg1/WebSem/main/Lab%201/cycling.owl#OneDayRace">
+        <rdfs:subClassOf rdf:resource="https://raw.githubusercontent.com/efrenbg1/WebSem/main/Lab%201/cycling.owl#Race"/>
+        <owl:disjointWith rdf:resource="https://raw.githubusercontent.com/efrenbg1/WebSem/main/Lab%201/cycling.owl#SeveralStagesRace"/>
+    </owl:Class>
+    
+
+
+    <!-- https://raw.githubusercontent.com/efrenbg1/WebSem/main/Lab%201/cycling.owl#Person -->
+
+    <owl:Class rdf:about="https://raw.githubusercontent.com/efrenbg1/WebSem/main/Lab%201/cycling.owl#Person">
+        <rdfs:subClassOf rdf:resource="https://raw.githubusercontent.com/efrenbg1/WebSem/main/Lab%201/cycling.owl#DomainThing"/>
+        <rdfs:comment>http://xmlns.com/foaf/0.1/Person</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- https://raw.githubusercontent.com/efrenbg1/WebSem/main/Lab%201/cycling.owl#Prologue -->
+
+    <owl:Class rdf:about="https://raw.githubusercontent.com/efrenbg1/WebSem/main/Lab%201/cycling.owl#Prologue">
+        <rdfs:subClassOf rdf:resource="https://raw.githubusercontent.com/efrenbg1/WebSem/main/Lab%201/cycling.owl#Stages"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://raw.githubusercontent.com/efrenbg1/WebSem/main/Lab%201/cycling.owl#stageOrder"/>
+                <owl:hasValue rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</owl:hasValue>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- https://raw.githubusercontent.com/efrenbg1/WebSem/main/Lab%201/cycling.owl#Race -->
+
+    <owl:Class rdf:about="https://raw.githubusercontent.com/efrenbg1/WebSem/main/Lab%201/cycling.owl#Race">
+        <rdfs:subClassOf rdf:resource="https://raw.githubusercontent.com/efrenbg1/WebSem/main/Lab%201/cycling.owl#DomainThing"/>
+        <owl:disjointUnionOf rdf:parseType="Collection">
+            <rdf:Description rdf:about="https://raw.githubusercontent.com/efrenbg1/WebSem/main/Lab%201/cycling.owl#OneDayRace"/>
+            <rdf:Description rdf:about="https://raw.githubusercontent.com/efrenbg1/WebSem/main/Lab%201/cycling.owl#SeveralStagesRace"/>
+        </owl:disjointUnionOf>
+    </owl:Class>
+    
+
+
+    <!-- https://raw.githubusercontent.com/efrenbg1/WebSem/main/Lab%201/cycling.owl#RaceCyclist -->
+
+    <owl:Class rdf:about="https://raw.githubusercontent.com/efrenbg1/WebSem/main/Lab%201/cycling.owl#RaceCyclist">
+        <rdfs:subClassOf rdf:resource="https://raw.githubusercontent.com/efrenbg1/WebSem/main/Lab%201/cycling.owl#TeamPerson"/>
+    </owl:Class>
+    
+
+
+    <!-- https://raw.githubusercontent.com/efrenbg1/WebSem/main/Lab%201/cycling.owl#RacePerson -->
+
+    <owl:Class rdf:about="https://raw.githubusercontent.com/efrenbg1/WebSem/main/Lab%201/cycling.owl#RacePerson">
+        <rdfs:subClassOf rdf:resource="https://raw.githubusercontent.com/efrenbg1/WebSem/main/Lab%201/cycling.owl#Person"/>
+    </owl:Class>
+    
+
+
+    <!-- https://raw.githubusercontent.com/efrenbg1/WebSem/main/Lab%201/cycling.owl#Rider -->
+
+    <owl:Class rdf:about="https://raw.githubusercontent.com/efrenbg1/WebSem/main/Lab%201/cycling.owl#Rider">
+        <rdfs:subClassOf rdf:resource="https://raw.githubusercontent.com/efrenbg1/WebSem/main/Lab%201/cycling.owl#RaceCyclist"/>
+        <owl:disjointUnionOf rdf:parseType="Collection">
+            <rdf:Description rdf:about="https://raw.githubusercontent.com/efrenbg1/WebSem/main/Lab%201/cycling.owl#Director"/>
+            <rdf:Description rdf:about="https://raw.githubusercontent.com/efrenbg1/WebSem/main/Lab%201/cycling.owl#Doctor"/>
+            <rdf:Description rdf:about="https://raw.githubusercontent.com/efrenbg1/WebSem/main/Lab%201/cycling.owl#RaceCyclist"/>
+        </owl:disjointUnionOf>
+    </owl:Class>
+    
+
+
+    <!-- https://raw.githubusercontent.com/efrenbg1/WebSem/main/Lab%201/cycling.owl#SeveralStagesRace -->
+
+    <owl:Class rdf:about="https://raw.githubusercontent.com/efrenbg1/WebSem/main/Lab%201/cycling.owl#SeveralStagesRace">
+        <rdfs:subClassOf rdf:resource="https://raw.githubusercontent.com/efrenbg1/WebSem/main/Lab%201/cycling.owl#Race"/>
+    </owl:Class>
+    
+
+
+    <!-- https://raw.githubusercontent.com/efrenbg1/WebSem/main/Lab%201/cycling.owl#Spectator -->
+
+    <owl:Class rdf:about="https://raw.githubusercontent.com/efrenbg1/WebSem/main/Lab%201/cycling.owl#Spectator">
+        <rdfs:subClassOf rdf:resource="https://raw.githubusercontent.com/efrenbg1/WebSem/main/Lab%201/cycling.owl#Person"/>
+    </owl:Class>
+    
+
+
+    <!-- https://raw.githubusercontent.com/efrenbg1/WebSem/main/Lab%201/cycling.owl#Sprinter -->
+
+    <owl:Class rdf:about="https://raw.githubusercontent.com/efrenbg1/WebSem/main/Lab%201/cycling.owl#Sprinter">
+        <rdfs:subClassOf rdf:resource="https://raw.githubusercontent.com/efrenbg1/WebSem/main/Lab%201/cycling.owl#RaceCyclist"/>
+    </owl:Class>
+    
+
+
+    <!-- https://raw.githubusercontent.com/efrenbg1/WebSem/main/Lab%201/cycling.owl#Stages -->
+
+    <owl:Class rdf:about="https://raw.githubusercontent.com/efrenbg1/WebSem/main/Lab%201/cycling.owl#Stages">
+        <rdfs:subClassOf rdf:resource="https://raw.githubusercontent.com/efrenbg1/WebSem/main/Lab%201/cycling.owl#DomainThing"/>
+    </owl:Class>
+    
+
+
+    <!-- https://raw.githubusercontent.com/efrenbg1/WebSem/main/Lab%201/cycling.owl#Team -->
+
+    <owl:Class rdf:about="https://raw.githubusercontent.com/efrenbg1/WebSem/main/Lab%201/cycling.owl#Team">
+        <rdfs:subClassOf rdf:resource="https://raw.githubusercontent.com/efrenbg1/WebSem/main/Lab%201/cycling.owl#DomainThing"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://raw.githubusercontent.com/efrenbg1/WebSem/main/Lab%201/cycling.owl#teamCyclistsCount"/>
+                <owl:hasValue rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">10</owl:hasValue>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://raw.githubusercontent.com/efrenbg1/WebSem/main/Lab%201/cycling.owl#teamDirectorsCount"/>
+                <owl:hasValue rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</owl:hasValue>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://raw.githubusercontent.com/efrenbg1/WebSem/main/Lab%201/cycling.owl#teamDoctorsCount"/>
+                <owl:hasValue rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</owl:hasValue>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:comment>http://xmlns.com/foaf/0.1/Organization</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- https://raw.githubusercontent.com/efrenbg1/WebSem/main/Lab%201/cycling.owl#TeamPerson -->
+
+    <owl:Class rdf:about="https://raw.githubusercontent.com/efrenbg1/WebSem/main/Lab%201/cycling.owl#TeamPerson">
+        <rdfs:subClassOf rdf:resource="https://raw.githubusercontent.com/efrenbg1/WebSem/main/Lab%201/cycling.owl#Person"/>
+    </owl:Class>
+    
+
+
+    <!-- https://raw.githubusercontent.com/efrenbg1/WebSem/main/Lab%201/cycling.owl#TeamTimeTrial -->
+
+    <owl:Class rdf:about="https://raw.githubusercontent.com/efrenbg1/WebSem/main/Lab%201/cycling.owl#TeamTimeTrial">
+        <rdfs:subClassOf rdf:resource="https://raw.githubusercontent.com/efrenbg1/WebSem/main/Lab%201/cycling.owl#TimeTrial"/>
+    </owl:Class>
+    
+
+
+    <!-- https://raw.githubusercontent.com/efrenbg1/WebSem/main/Lab%201/cycling.owl#TimeTrial -->
+
+    <owl:Class rdf:about="https://raw.githubusercontent.com/efrenbg1/WebSem/main/Lab%201/cycling.owl#TimeTrial">
+        <rdfs:subClassOf rdf:resource="https://raw.githubusercontent.com/efrenbg1/WebSem/main/Lab%201/cycling.owl#Stages"/>
+    </owl:Class>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- https://raw.githubusercontent.com/efrenbg1/WebSem/main/Lab%201/cycling.owl#Binard_Hinault -->
+
+    <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/efrenbg1/WebSem/main/Lab%201/cycling.owl#Binard_Hinault">
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/efrenbg1/WebSem/main/Lab%201/cycling.owl#Rider"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://raw.githubusercontent.com/efrenbg1/WebSem/main/Lab%201/cycling.owl#Charly_Gaul -->
+
+    <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/efrenbg1/WebSem/main/Lab%201/cycling.owl#Charly_Gaul">
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/efrenbg1/WebSem/main/Lab%201/cycling.owl#Climber"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://raw.githubusercontent.com/efrenbg1/WebSem/main/Lab%201/cycling.owl#Eddy_Merckx -->
+
+    <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/efrenbg1/WebSem/main/Lab%201/cycling.owl#Eddy_Merckx">
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/efrenbg1/WebSem/main/Lab%201/cycling.owl#Rider"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://raw.githubusercontent.com/efrenbg1/WebSem/main/Lab%201/cycling.owl#Fausto_Coppi -->
+
+    <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/efrenbg1/WebSem/main/Lab%201/cycling.owl#Fausto_Coppi">
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/efrenbg1/WebSem/main/Lab%201/cycling.owl#Rider"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://raw.githubusercontent.com/efrenbg1/WebSem/main/Lab%201/cycling.owl#Federico_Bahamontes -->
+
+    <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/efrenbg1/WebSem/main/Lab%201/cycling.owl#Federico_Bahamontes">
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/efrenbg1/WebSem/main/Lab%201/cycling.owl#Climber"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://raw.githubusercontent.com/efrenbg1/WebSem/main/Lab%201/cycling.owl#Giro_de_Italia -->
+
+    <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/efrenbg1/WebSem/main/Lab%201/cycling.owl#Giro_de_Italia">
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/efrenbg1/WebSem/main/Lab%201/cycling.owl#SeveralStagesRace"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://raw.githubusercontent.com/efrenbg1/WebSem/main/Lab%201/cycling.owl#Jonas_Vingegaard -->
+
+    <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/efrenbg1/WebSem/main/Lab%201/cycling.owl#Jonas_Vingegaard">
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/efrenbg1/WebSem/main/Lab%201/cycling.owl#Climber"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://raw.githubusercontent.com/efrenbg1/WebSem/main/Lab%201/cycling.owl#Tour_de_France -->
+
+    <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/efrenbg1/WebSem/main/Lab%201/cycling.owl#Tour_de_France">
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/efrenbg1/WebSem/main/Lab%201/cycling.owl#SeveralStagesRace"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://raw.githubusercontent.com/efrenbg1/WebSem/main/Lab%201/cycling.owl#Vuelta_a_Espana -->
+
+    <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/efrenbg1/WebSem/main/Lab%201/cycling.owl#Vuelta_a_Espana">
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/efrenbg1/WebSem/main/Lab%201/cycling.owl#SeveralStagesRace"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // General axioms
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="https://raw.githubusercontent.com/efrenbg1/WebSem/main/Lab%201/cycling.owl#Director"/>
+            <rdf:Description rdf:about="https://raw.githubusercontent.com/efrenbg1/WebSem/main/Lab%201/cycling.owl#Doctor"/>
+            <rdf:Description rdf:about="https://raw.githubusercontent.com/efrenbg1/WebSem/main/Lab%201/cycling.owl#RaceCyclist"/>
+        </owl:members>
+    </rdf:Description>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 4.5.26.2023-07-17T20:34:13Z) https://github.com/owlcs/owlapi -->
+
