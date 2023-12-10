@@ -26,21 +26,43 @@
 > $Prologue \sqsubseteq stageOrder(nonNegativeInteger)$ 
 >
 > $\forall Prologue.stageOrder, stageOrder=1$
+
+#### 6. Explain in the report what are the differences between object and datatype properties.
+> Both objects and datatypes are used to define relationships between entities. But they differ in several ways:
 >
-
-Revisar ObjectProperty hasStage???
-
-
-#### 6. Add the concept Person to the ontology. A Person can be a Spectactor, a RacePerson or a TeamPerson among others. A TeamPerson is exactly the union of a Doctor, a Director or a RaceCyclist. A RaceCyclist can himself be considered as a Rider, a Sprinter or a Climber. A Person has a name, an age, and a nationality. A Person participates in Race. Add all these classes and properties and the corresponding axioms. Explain in the report what are the differences between object and datatype properties.
-
+> Object: links classes to other classes. 
+> One example is the property "composedOfPrologue" which links SeveralStagesRace with Prologue, meaning that a several stages race will always have to have a prologue stage
+>
+> Datatype: it links classes to data values.
+> One example is the property "age" which links Person with a value corresponding to its age
 
 #### 7. A Team is exactly composed of 1 Doctor, 1 Director and 10 RaceCyclist. Define this class using the belongsTo property. Explain in the report what can you say about this new property with respect to previously defined properties? 
+> Within the "Person"/"TeamPerson" we have three different new classes: "Doctor", "Director" and "RaceCyclist". As subclasses of "TeamPerson" we can link them all to a "Team" using a general "belongsTo" property. But to be more specific we can define three new object properties under "belongsTo" that link each of the new classes to "Team" as well.
+> 
+> The difference with previously defined properties is that in this case we have exactly 1 "Doctor", 1 "Director" and 10 "RaceCyclist" in a "Team", and as such we have to define three DataProperties with the count values of each of the classes and as such we have to make sure they equal 1, 1 and 10 respectively. 
 
-
-#### 9. Load (import) the FOAF ontology using its http://xmlns.com/foaf/spec/ and align some of the concepts you have defined such as: the class Person is equivalent to the class Person defined in FOAF and the class Team is a subclass of the class Organisation defined in FOAF. Search for properties in the FOAF ontology to align with your own properties and add the corresponding mapping axioms. Write in the report the mappings you have discovered.
-
+#### 9. Search for properties in the FOAF ontology to align with your own properties and add the corresponding mapping axioms. Write in the report the mappings you have discovered.
+> From the FOAF ontology we've mapped the following:
+> 
+> #### Classes:
+> | FOAF | Cycling | Why? |
+> | - | - | - |
+> | Person | Person | They represent the same concept |
+> | Organization | Team | A team is really an organization of people |
+>
+>  #### Data properties:
+> | FOAF | Cycling | Why? |
+> | - | - | - |
+> | age | age | The data property age for Person can represents the same conecpt and so it can be directly mapped |
+> | firstName | name | The same for the name of Person |
+>
+> #### Object properties:
+> | FOAF | Cycling | Why? |
+> | - | - | - |
+> | member | belongsTo | Member maps an Agent with a Group. belongsTo does the same thing but with a TeamPerson and a Team |
 
 #### 11. Use the LOV search function at https://lov.linkeddata.es/dataset/lov/ and identify relevant classes and properties that could be re-used in your ontology. Write them down in your report.
-
+> 
+>
 
 #### 12. Validate your ontology by clicking on Reasoner and Start reasoner where HermiT is selected as the reasoning service. What is the result? Did you get the message “your ontology is coherent and consistent”?
