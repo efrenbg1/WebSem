@@ -24,6 +24,7 @@
     <!-- https://raw.githubusercontent.com/efrenbg1/WebSem/main/Lab%201/cycling.rdf#belongsTo -->
 
     <owl:ObjectProperty rdf:about="https://raw.githubusercontent.com/efrenbg1/WebSem/main/Lab%201/cycling.rdf#belongsTo">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#TransitiveProperty"/>
         <rdfs:domain rdf:resource="https://raw.githubusercontent.com/efrenbg1/WebSem/main/Lab%201/cycling.rdf#TeamPerson"/>
         <rdfs:range rdf:resource="https://raw.githubusercontent.com/efrenbg1/WebSem/main/Lab%201/cycling.rdf#Team"/>
         <rdfs:comment>http://xmlns.com/foaf/0.1/member</rdfs:comment>
@@ -88,8 +89,10 @@
     <!-- https://raw.githubusercontent.com/efrenbg1/WebSem/main/Lab%201/cycling.rdf#participatesIn -->
 
     <owl:ObjectProperty rdf:about="https://raw.githubusercontent.com/efrenbg1/WebSem/main/Lab%201/cycling.rdf#participatesIn">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#TransitiveProperty"/>
         <rdfs:domain rdf:resource="https://raw.githubusercontent.com/efrenbg1/WebSem/main/Lab%201/cycling.rdf#Person"/>
         <rdfs:range rdf:resource="https://raw.githubusercontent.com/efrenbg1/WebSem/main/Lab%201/cycling.rdf#Race"/>
+        <rdfs:comment>http://xmlns.com/foaf/0.1/holdsAccount</rdfs:comment>
     </owl:ObjectProperty>
     
 
