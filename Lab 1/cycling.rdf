@@ -92,7 +92,6 @@
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#TransitiveProperty"/>
         <rdfs:domain rdf:resource="https://raw.githubusercontent.com/efrenbg1/WebSem/main/Lab%201/cycling.rdf#Person"/>
         <rdfs:range rdf:resource="https://raw.githubusercontent.com/efrenbg1/WebSem/main/Lab%201/cycling.rdf#Race"/>
-        <rdfs:comment>http://xmlns.com/foaf/0.1/holdsAccount</rdfs:comment>
     </owl:ObjectProperty>
     
 
@@ -342,6 +341,11 @@
 
     <owl:Class rdf:about="https://raw.githubusercontent.com/efrenbg1/WebSem/main/Lab%201/cycling.rdf#Rider">
         <rdfs:subClassOf rdf:resource="https://raw.githubusercontent.com/efrenbg1/WebSem/main/Lab%201/cycling.rdf#RaceCyclist"/>
+        <owl:disjointUnionOf rdf:parseType="Collection">
+            <rdf:Description rdf:about="https://raw.githubusercontent.com/efrenbg1/WebSem/main/Lab%201/cycling.rdf#Director"/>
+            <rdf:Description rdf:about="https://raw.githubusercontent.com/efrenbg1/WebSem/main/Lab%201/cycling.rdf#Doctor"/>
+            <rdf:Description rdf:about="https://raw.githubusercontent.com/efrenbg1/WebSem/main/Lab%201/cycling.rdf#RaceCyclist"/>
+        </owl:disjointUnionOf>
     </owl:Class>
     
 
@@ -409,11 +413,6 @@
 
     <owl:Class rdf:about="https://raw.githubusercontent.com/efrenbg1/WebSem/main/Lab%201/cycling.rdf#TeamPerson">
         <rdfs:subClassOf rdf:resource="https://raw.githubusercontent.com/efrenbg1/WebSem/main/Lab%201/cycling.rdf#Person"/>
-        <owl:disjointUnionOf rdf:parseType="Collection">
-            <rdf:Description rdf:about="https://raw.githubusercontent.com/efrenbg1/WebSem/main/Lab%201/cycling.rdf#Director"/>
-            <rdf:Description rdf:about="https://raw.githubusercontent.com/efrenbg1/WebSem/main/Lab%201/cycling.rdf#Doctor"/>
-            <rdf:Description rdf:about="https://raw.githubusercontent.com/efrenbg1/WebSem/main/Lab%201/cycling.rdf#RaceCyclist"/>
-        </owl:disjointUnionOf>
     </owl:Class>
     
 
