@@ -23,7 +23,11 @@
 
     <!-- https://raw.githubusercontent.com/efrenbg1/WebSem/main/Lab%201/cycling.rdf#belongsTo -->
 
-    <owl:ObjectProperty rdf:about="https://raw.githubusercontent.com/efrenbg1/WebSem/main/Lab%201/cycling.rdf#belongsTo"/>
+    <owl:ObjectProperty rdf:about="https://raw.githubusercontent.com/efrenbg1/WebSem/main/Lab%201/cycling.rdf#belongsTo">
+        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/efrenbg1/WebSem/main/Lab%201/cycling.rdf#TeamPerson"/>
+        <rdfs:range rdf:resource="https://raw.githubusercontent.com/efrenbg1/WebSem/main/Lab%201/cycling.rdf#Team"/>
+        <rdfs:comment>http://xmlns.com/foaf/0.1/member</rdfs:comment>
+    </owl:ObjectProperty>
     
 
 
@@ -106,6 +110,7 @@
     <owl:DatatypeProperty rdf:about="https://raw.githubusercontent.com/efrenbg1/WebSem/main/Lab%201/cycling.rdf#age">
         <rdfs:domain rdf:resource="https://raw.githubusercontent.com/efrenbg1/WebSem/main/Lab%201/cycling.rdf#Person"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"/>
+        <rdfs:comment>http://xmlns.com/foaf/0.1/age</rdfs:comment>
     </owl:DatatypeProperty>
     
 
@@ -115,6 +120,7 @@
     <owl:DatatypeProperty rdf:about="https://raw.githubusercontent.com/efrenbg1/WebSem/main/Lab%201/cycling.rdf#name">
         <rdfs:domain rdf:resource="https://raw.githubusercontent.com/efrenbg1/WebSem/main/Lab%201/cycling.rdf#Person"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment>http://xmlns.com/foaf/0.1/firstName</rdfs:comment>
     </owl:DatatypeProperty>
     
 
