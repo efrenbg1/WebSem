@@ -1,11 +1,11 @@
 #### 1. Start Protégé and imagine a good namespace prefix and a namespace URI for modeling the Cycling domain. Provide this couple prefix/uri in your report and explain why you choose them.
-> As we are using a GitHub repository to host our reports and the .rtf files, the couple prefix/uri can be extracted from the raw URL that points to the .rdf file:
+> As we are using a GitHub repository to host our reports and the .rtf files, the couple prefix/uri can be extracted from the raw URL that points to the .owl file:
 > 
 > Prefix: https://raw.githubusercontent.com/efrenbg1/WebSem/main/Lab%201
 >
-> URI: /cycling.rdf
+> URI: /cycling.owl
 >
-> So the resulting IRI will be: https://raw.githubusercontent.com/efrenbg1/WebSem/main/Lab%201/cycling.rdf
+> So the resulting IRI will be: https://raw.githubusercontent.com/efrenbg1/WebSem/main/Lab%201/cycling.owl
 
 #### 2. In the cycling domain, a Race is either a OneDayRace or a SeveralStagesRace. There are no other types of race. Model these three classes in the ontology and write in the report the logical formula equivalent to this definition.
 > $OneDayRace \sqsubseteq Race$
