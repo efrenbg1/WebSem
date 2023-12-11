@@ -56,7 +56,7 @@
 > | Person | Person | They represent the same concept |
 > | Organization | Team | A team is really an organization of people |
 >
->  #### Data properties:
+> #### Data properties:
 > | FOAF | Cycling | Why? |
 > | - | - | - |
 > | age | age | The data property age for Person can represents the same concept and so it can be directly mapped |
@@ -66,6 +66,7 @@
 > | FOAF | Cycling | Why? |
 > | - | - | - |
 > | member | belongsTo | Member maps an Agent with a Group. belongsTo does the same thing but with a TeamPerson and a Team |
+> 
 
 #### 11. Use the LOV search function at https://lov.linkeddata.es/dataset/lov/ and identify relevant classes and properties that could be re-used in your ontology. Write them down in your report.
 > This question can not be done as the website is down at the moment of making this report
