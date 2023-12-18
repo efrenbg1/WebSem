@@ -542,7 +542,6 @@ WHERE {
         FILTER (?otherFactor != ?factor)
     }
 }
-
 ```
 
 ### 6. Find all twin primes (i.e., two prime numbers at a distance of 2, e.g., 17 and 19)
