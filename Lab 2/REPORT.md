@@ -43,10 +43,16 @@ humans:John
  
 ## Part II: SPARQL 101
 ### 2. Write down in one sentence what this query means? Run this query, how many answers do you get? What is/are the type(s) of John?
+```sql
+select ?x ?t where
+{
+    ?x rdf:type ?t
+}
+```
 > We are selecting all elements in the RDF (referenced by x) and we are also selecting the type for each one (referenced by t)
->
+
 > We get 69 answers
->
+
 > John is referenced three times, and as such has three different types:
 > http://www.inria.fr/2007/09/11/humans.rdfs#Person
 > http://www.inria.fr/2007/09/11/humans.rdfs#Animal
@@ -57,9 +63,26 @@ humans:John
 
 
 ### 3. Write down in one sentence what this query means? Run this query, how many answers do you get?
+```sql
+PREFIX humans: <http://www.inria.fr/2007/09/11/humans.rdfs#>
+SELECT *
+WHERE
+{
+    ?x humans:hasSpouse ?y
+}
+```
 > Selects all attributes from instances that have the relationship humans:hasSpouse
->
-> We get 6 rows
+
+> We get 6 rows:
+
+| num | ?x                                                              | ?y                                                               |
+| --- | --------------------------------------------------------------- | ---------------------------------------------------------------- |
+| 1   | <http://www.inria.fr/2007/09/11/humans.rdfs-instances#Harry>    | <http://www.inria.fr/2007/09/11/humans.rdfs-instances#Sophie>    |
+| 2   | <http://www.inria.fr/2007/09/11/humans.rdfs-instances#Eve>      | <http://www.inria.fr/2007/09/11/humans.rdfs-instances#David>     |
+| 3   | <http://www.inria.fr/2007/09/11/humans.rdfs-instances#Flora>    | <http://www.inria.fr/2007/09/11/humans.rdfs-instances#Gaston>    |
+| 4   | <http://www.inria.fr/2007/09/11/humans.rdfs-instances#Jennifer> | <http://www.inria.fr/2007/09/11/humans.rdfs-instances#John>      |
+| 5   | <http://www.inria.fr/2007/09/11/humans.rdfs-instances#William>  | <http://www.inria.fr/2007/09/11/humans.rdfs-instances#Laura>     |
+| 6   | <http://www.inria.fr/2007/09/11/humans.rdfs-instances#Karl>     | <http://www.inria.fr/2007/09/11/humans.rdfs-instances#Catherine> |
 
 
 ### 4. Look at the knowledge base and write down which RDF property is used for indicating the shoe size of the people?
