@@ -2,6 +2,14 @@
 #### Víctor MONTESDEOCA FENOY
 #### Efrén BOYARIZO GARGALLO
 
+## Table of Contents
+- [Part I: The RDF Knowledge Base](#part-i-the-rdf-knowledge-base)
+- [Part II: SPARQL 101](#part-ii-sparql-101)
+- [Part III: The RDFS Ontology](#part-iii-the-rdfs-ontology)
+- [Part IV: Querying the Open Web](#part-iv-querying-the-open-web)
+- [Part V: Querying Wikidata](#part-v-querying-wikidata)
+- [Part VI: SPARQL Puzzles](#part-vi-sparql-puzzles)
+
 ## Part I: The RDF Knowledge Base
 ### 1. What is the namespace (prefix name and expanded URI) used for the individuals (or instances) in this knowledge base?
 > The prefix name is "humans"
@@ -30,13 +38,12 @@ humans:John
   humans:hasParent humans:Harry;
   humans:hasParent humans:Sophie;
   humans:hasSpouse humans:Jennifer;
-  humans:hasChild humans:Mark;
-.
+  humans:hasChild humans:Mark .
 ```
  
 ## Part II: SPARQL 101
 ### 2. Write down in one sentence what this query means? Run this query, how many answers do you get? What is/are the type(s) of John?
-> We are selecting all elements in the RDF (referenced by x) and we are also selecting the type for each one (referenced by t and)
+> We are selecting all elements in the RDF (referenced by x) and we are also selecting the type for each one (referenced by t)
 >
 > We get 69 answers
 >
@@ -45,7 +52,7 @@ humans:John
 > http://www.inria.fr/2007/09/11/humans.rdfs#Animal
 > http://www.inria.fr/2007/09/11/humans.rdfs#Male
 >
-> Note that a Male is a Person and a Person in an Animal
+> Note that a Male is a Person; and a Person in an Animal
 >
 
 
@@ -153,6 +160,7 @@ WHERE
 
 ### 9. Look up the URI that identifies John and ask the engine what is the description of this person using the appropriate SPARQL keyword (see slide 50)?
 > The URI that identifies John is http://www.inria.fr/2007/09/11/humans.rdfs-instances#John
+> 
 > We can ask the engine with the following query:
 >
 ```sql
@@ -321,15 +329,37 @@ WHERE {
 ### 4. Write down a SPARQL query that provides the definition and the translation of “shoe size”?
 ```sql
 PREFIX humans: <http://www.inria.fr/2007/09/11/humans.rdfs#>
-SELECT ?subClass ?superClass
+SELECT DISTINCT ?itemLabel ?item ?itemDescription 
 WHERE {
-    ?subClass rdfs:subClassOf ?superClass .
+    ?item rdfs:label ?itemLabel
+    ?item rdfs:comment ?itemDescription
+    FILTER contains(?itemLabel, "shoe size")
 }
 ```
+| num | ?itemLabel     | ?item                                                 | ?itemDescription                                                           |
+| --- | -------------- | ----------------------------------------------------- | -------------------------------------------------------------------------- |
+| 1   | "shoe size"@en | <http://www.inria.fr/2007/09/11/humans.rdfs#shoesize> | "express in some way the approximate length of the shoes for a person."@en |
+| 2   | "shoe size"@en | <http://www.inria.fr/2007/09/11/humans.rdfs#shoesize> | "taille, exprimée en points, des chaussures d'une personne."@fr            |
 
 ### 5. Write down a SPARQL query that provides all synonyms of the French term “personne”? You can make use of the lang(?var) function for this.
 ```sql
+PREFIX humans: <http://www.inria.fr/2007/09/11/humans.rdfs#>
+SELECT DISTINCT ?item  ?itemLabel
+WHERE {
+
+?item rdfs:label ?itemLabel
+
+FILTER (lang(?itemLabel) = 'fr')
+FILTER (?item = humans:Person)
+
+}
 ```
+| num | ?item                                               | ?itemLabel       |
+| --- | --------------------------------------------------- | ---------------- |
+| 1   | <http://www.inria.fr/2007/09/11/humans.rdfs#Person> | "homme"@fr       |
+| 2   | <http://www.inria.fr/2007/09/11/humans.rdfs#Person> | "personne"@fr    |
+| 3   | <http://www.inria.fr/2007/09/11/humans.rdfs#Person> | "être humain"@fr |
+| 4   | <http://www.inria.fr/2007/09/11/humans.rdfs#Person> | "humain"@fr      |
 
 ## Part IV: Querying the Open Web
 ### 1. Write down 3 SPARQL queries that respectively counts the number of classes, object properties and datatype properties contained in the DBpedia ontology. Do not try to write a single query since it is likely to time out.
@@ -366,20 +396,11 @@ WHERE {
 | 1777                  |
 
 ### 2. Explain the differences between the /resource, /data and /page URIs for a given resource.
-The differences between /resource, /data, and /page URIs can vary based on the structure and design of a particular system or dataset. However, there are some common conventions that these URIs might follow in certain contexts:
-
-/resource:
-
-This URI often refers to the conceptual representation or metadata about a resource. It's commonly used to represent the resource itself or its metadata in a RESTful or linked data context.
-For example, /resource/resource_name might lead to a page or information describing the resource, its properties, relationships, and other metadata.
-/data:
-
-The /data URI might be used to directly access the raw or structured data associated with a resource. It could provide access to the actual data or a specific data endpoint.
-For instance, /data/resource_name could lead to a dataset, file, or API endpoint that provides direct access to the data related to the resource.
-/page:
-
-The /page URI might be used to access a human-readable web page or interface designed for presenting information about the resource in a user-friendly manner.
-For example, /page/resource_name might lead to a web page that contains information about the resource formatted for easy understanding by humans, rather than structured data meant for machines.
+> /resource: represent the metadata in a RESTful or linked data context. This includes the resources, its properties, relationships, and other metadata
+>
+> /data: offers access the raw or structured data associated with a resource
+>
+> /page: is used to access human-readable web page with information about the resource
 
 ### 3. Write down a SPARQL query that lists all winners of the Nobel Prize in Physics sorted from oldest to youngest
 ```sql
@@ -468,8 +489,82 @@ SERVICE wikibase:label { bd:serviceParam wikibase:language "en" . }
 
 ## Part VI: SPARQL Puzzles
 ### 1. Find all even numbers.
+```sql
+PREFIX number: <http://km.aifb.kit.edu/projects/numbers/#>
+SELECT ?evenNumber
+WHERE {
+    ?evenNumber number:primeFactor ?two
+    FILTER (?two = number:Two)
+}
+```
 ### 2. Find all numbers that are successors of one of their prime factors.
+```sql
+PREFIX number: <http://km.aifb.kit.edu/projects/numbers/#>
+SELECT ?succ
+WHERE {
+    ?succ number:primeFactor ?factor
+    ?succ number:previous ?factor
+}
+```
+
 ### 3. Find all odd numbers.
+```sql
+PREFIX number: <http://km.aifb.kit.edu/projects/numbers/#>
+SELECT ?number
+WHERE {
+    ?number number:primeFactor ?factor .
+    FILTER (!(?factor = number:Two))
+}
+```
+
 ### 4. Find all prime numbers.
+```sql
+PREFIX number: <http://km.aifb.kit.edu/projects/numbers/#>
+SELECT ?primeNumber
+WHERE {
+    ?primeNumber number:primefactor ?factor
+    FILTER NOT EXISTS {
+        ?otherFactor number:lessThan ?primeNumber
+        ?primeNumber number:primefactor ?otherFactor
+        FILTER (?otherFactor != ?factor)
+    }
+}
+```
 ### 5. Find all non-prime numbers.
+```sql
+PREFIX number: <http://km.aifb.kit.edu/projects/numbers/#>
+SELECT ?primeNumber
+WHERE {
+    ?primeNumber number:primefactor ?factor
+    FILTER EXISTS {
+        ?otherFactor number:lessThan ?primeNumber
+        ?primeNumber number:primefactor ?otherFactor
+        FILTER (?otherFactor != ?factor)
+    }
+}
+
+```
+
 ### 6. Find all twin primes (i.e., two prime numbers at a distance of 2, e.g., 17 and 19)
+```sql
+PREFIX number: <http://km.aifb.kit.edu/projects/numbers/#>
+SELECT ?twinPrime1 ?twinPrime2
+WHERE {
+    ?twinPrime1 number:primefactor ?factor1
+    ?twinPrime2 number:primefactor ?factor2
+
+    FILTER NOT EXISTS {
+        ?otherFactor1 number:lessThan ?twinPrime1
+        ?twinPrime1 number:primefactor ?otherFactor1
+        FILTER (?otherFactor1 != ?factor1)
+    }
+
+    FILTER NOT EXISTS {
+        ?otherFactor2 number:lessThan ?twinPrime2 .
+        ?twinPrime2 number:primefactor ?otherFactor2 .
+        FILTER (?otherFactor2 != ?factor2)
+    }
+
+    FILTER (?twinPrime2 - ?twinPrime1 = 2)
+}
+```
